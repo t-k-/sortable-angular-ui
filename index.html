@@ -1,0 +1,24 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<script type='text/javascript' src='//code.jquery.com/jquery-1.8.3.js'></script>
+<script type='text/javascript' src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script>
+<script src="angular-1.4.7.min.js"></script>
+<script src="sortable-0.13.4.js"></script>
+<script src="myapp.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div ng-controller="MyController">
+Hello {{greetMe}}!
+
+<ul ui:sortable ng-model="mylist">
+	<li ng-repeat="it in mylist" style="background-color:gray;width:300px;">
+		{{$index}}: <input type="text" ng-model="it.text">
+	</li>
+</ul>
+<hr>
+<div ng-repeat="it in mylist">{{$index}}:{{it}}</div>
+</div>
+</body>
+</html>
